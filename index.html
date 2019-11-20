@@ -2,13 +2,40 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>Stolen Plans - RPG GAME</title>
+  <script src="assets/js/main.js" charset="utf-8"></script>
 </head>
 <body>
+  <audio id="audio" src="assets/sounds/blackpink.mp3" loop="loop" autoplay="autoplay">Lecture de l'audio non suportée</audio>
 
-  <main>
-    
+  <main class="col-12 row align-items-center">
+    <div class="col-6">
+      <h1 class="h1">The Stolen Plan</h1>
+      <h5 class="h5">A game made by Enzo Avagliano</h5>
+    </div>
+    <div class="col-6">
+      <div class="d-flex flex-column justify-content-center align-items-center blurred">
+        <div class="m-3 d-flex flex-column">
+          <button class="btn btn-outline-light btn-lg" type="button" name="button">New Game</button>
+          <small>Start a new game, from the begining of the story.</small>
+        </div>
+        <div class="m-3 d-flex flex-column">
+          <button class="btn btn-outline-light btn-lg" type="button" name="button">Continue</button>
+          <small>Continue an existing game, from an existing save.</small>
+        </div>
+        <div class="m-3 d-flex flex-column">
+          <button class="btn btn-outline-light btn-lg" type="button" name="button">Settings</button>
+          <small>Access the settings of the game (Volume, etc...).</small>
+        </div>
+      </div>
+
+      <div class="fixed-bottom">
+        <button class="btn btn-outline-light m-1" type="button" onclick="muteVolume();" name="button">Pause music</button>
+        <button class="btn btn-outline-light m-1" type="button" onclick="unMuteVolume();" name="button">Play music</button>
+      </div>
+    </div>
   </main>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

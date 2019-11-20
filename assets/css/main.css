@@ -1,4 +1,35 @@
+@font-face {
+  font-family: 'Computer';
+  src: url('../fonts/Computerfont.ttf');
+}
+
 *{
   padding: 0;
   margin: 0;
+  color: #fff;
+}
+
+main{
+  height: 100vh;
+  background-image: url('../img/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1{
+  font-family: Computer;
+  font-size: 6em !important;
+}
+
+h5{
+  font-family: monospace;
+}
+
+.blurred:before{
+  content: '';
+  position: absolute;
+  background-attachment: fixed;
+  background-color: rgba(255, 255, 255, 1);
+  filter: blur(2px);
 }
