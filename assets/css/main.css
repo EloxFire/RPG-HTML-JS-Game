@@ -7,10 +7,14 @@
   padding: 0;
   margin: 0;
   color: #fff;
+  font-family: monospace;
 }
 
 main{
   height: 100vh;
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
   background-image: url('../img/background.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -22,8 +26,17 @@ h1{
   font-size: 6em !important;
 }
 
-h5{
-  font-family: monospace;
+a{
+  text-decoration: none;
+  color: #fff !important;
+}
+
+a:hover{
+  color: #3c3c3c !important;
+}
+
+.btn:hover{
+  background-color: rgb(255, 255, 255, 0.15) !important;
 }
 
 .blurred:before{
