@@ -8,6 +8,7 @@
 
 
 // Player Variables
+let player;
 let playerName;
 let playerGender;
 let playerMindset;
@@ -22,6 +23,8 @@ let defaultExp = 0;
 let nameInput = document.getElementById('playerName');
 let genderInput = document.getElementById('playerGender');
 
+
+// Classe du joueur
 class Player{
   constructor(name, gender, hp, sp, exp, grade){
     this.name = name;
@@ -53,12 +56,10 @@ class Player{
 }
 
 function setPlayerInfos(){
-  let nameInput = document.getElementById('playerName');
-  let genderInput = document.getElementById('playerGender');
-  playerName = nameInput.value;
-  playerGender = genderInput.value;
+  playerName = "nameInput.value";
+  playerGender = "genderInput.value";
 
-  let player = new Player(playerName, playerGender, defaultHp, defaultSp, defaultExp, "Heros");
+  player = new Player(playerName, playerGender, defaultHp, defaultSp, defaultExp, "Heros");
 
   console.log("Player's name : " + player.getName());
   console.log("Player's gender : " + player.getGender());
@@ -67,4 +68,5 @@ function setPlayerInfos(){
   console.log("Player's experience : " + player.getExp());
   console.log(' ');
   console.log("Player infos were set successfully !");
+  console.log(' ');
 }
