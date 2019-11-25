@@ -2,15 +2,40 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/game.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>The Stolen Plans - RPG GAME</title>
-  <script src="assets/js/main.js" charset="utf-8"></script>
+  <script src="assets/js/game.js" charset="utf-8"></script>
 </head>
-<body>
-  <audio id="audio" src="assets/sounds/blackpink.mp3" loop="loop" autoplay="autoplay">Lecture de l'audio non suportée</audio>
+<body onclick="initPage();">
 
-  <main class="col-12 row align-items-center">
+  <main id="mainContainer" class="col-12">
+
+    <div class="d-flex flex-column">
+      <div id="playerInfosContainer" class="m-4 p-2" style="background-color:rgba(255, 255, 255, 0.20);">
+        <h4 class="h4">Stats :</h4>
+        <p id="playerNameField" class="pl-1">Player's name : </p>
+        <p id="playerHPField" class="pl-1">Player's HP : </p>
+        <p id="playerSPField" class="pl-1">Player's SP : </p>
+        <p id="playerExpField" class="pl-1">Player's Exp : </p>
+        <p><br></p>
+        <p id="playerSelectedWeapon" class="pl-1">Selected Weapon : </p>
+      </div>
+
+      <div id="chapterInfosContainer" class="m-4 p-2" style="background-color:rgba(255, 255, 255, 0.20);">
+        <h4 id="chapter" class="h4">Chapter 1</h4>
+        <p id="location">Location : </p>
+      </div>
+
+      <div class="fixed-bottom d-flex flew-rows justify-content-center">
+        <div style="border: 2px solid #fff;width:80vw;height:15vh;color:#fff;background-color:rgba(255, 255, 255, 0.20);" class="mb-5 p-3">
+          <p id="text">
+            A l'instant où vous arrivez dans le hangar 54, vous êtes rapidement mis au courant des dernières nouveautés de l'enquête.
+            <br>Visiblement, vous allez devoir fouiller les avants postes pirates alentours pour recolter un maximum d'informations et espérer trouver l'endroit ou ont été enmener les disques durs avant qu'ils ne soit détruits et perdus à jamais.
+          </p>
+        </div>
+      </div>
+    </div>
 
   </main>
 

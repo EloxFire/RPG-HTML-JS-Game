@@ -26,6 +26,8 @@ function cinematic(){
     main.innerHTML = " ";
     main.innerHTML = "<div data-aos='fade-in' class='d-block text-center'> <div> <h1 class='h1'>2066 - Present Day</h1> </div><div data-aos='fade-in' class='container'> <p style='font-size: 1.2em;'>Ce matin j'ai été appelé en urgence. Les disques durs contenant les programmes de navigation des vaisseaux éclaireurs ont été volés !<br>Je suis demandé pour accompagner l'equipe tactique chargé de les retrouver.<br><br>Pourquoi, me direz-vous ? Pourquoi moi ?<br>Parce que je suis la personne qui a développé les signatures numériques et les algorithmes de cryptage qui prouvent l'autenticité de ces programmes de navigation.<br>Et je suis le seul a pouvoir les identifier, car je suis le seul a les connaitre par coeur, il n'existe qu'une seule autre version de ces morceaux de code, et ils sont dans ma tête.</p></div></div>";
     index = 6;
+  }else if(index == 6){
+    window.location.href = "game.html";
   }
 
 }

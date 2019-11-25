@@ -37,7 +37,7 @@ function newGameHUD(){
 
   buttonContainerOne.innerHTML = "<form><div class='form-group'><label for='playerName'>Caracter Name :</label><input type='text' class='form-control' id='playerName' placeholder='Enter you player's name'></div>";
   buttonContainerTwo.innerHTML = "<div class='form-group'><label for='playerGender'>Caracter Gender :</label><select class='form-control' id='playerGender'><option>Male</option><option>Female</option></select></div>";
-  buttonContainerThree.innerHTML = "<div class='form-group'><label for='playerMindset'>Caracter Mindset :</label><select class='form-control' id='playerMindset'><option>(Soon)</option><option>Feature under development</option></select></div><button type='button' onclick='setPlayerInfos();' class='btn btn-outline-light btn-lg mt-5' onclick='window.location.href = 'cinematic.html';'> <a href='cinematic.html'>Start Game</a> </button></div></form>";
+  buttonContainerThree.innerHTML = "<div class='form-group'><label for='playerMindset'>Caracter Mindset :</label><select class='form-control' id='playerMindset'><option>(Soon)</option><option>Feature under development</option></select></div><button type='button' onclick='setPlayerInfos();' class='btn btn-outline-light btn-lg mt-5'> <a href='cinematic.html'>Start Game</a> </button></div></form>";
 
 }
 
