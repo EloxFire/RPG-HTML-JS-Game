@@ -56,8 +56,8 @@ class Player{
 }
 
 function setPlayerInfos(){
-  playerName = "nameInput.value";
-  playerGender = "genderInput.value";
+  playerName = nameInput.value;
+  playerGender = genderInput.value;
 
   player = new Player(playerName, playerGender, defaultHp, defaultSp, defaultExp, "Heros");
 
