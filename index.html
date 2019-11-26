@@ -9,9 +9,9 @@
   <script src="assets/js/game.js" charset="utf-8"></script>
 </head>
 <body>
-  <audio id="audio" src="assets/sounds/Desire.mp3" loop="loop" autoplay="autoplay">Lecture de l'audio non suportée</audio>
+  <audio id="audio" src="assets/sounds/Desire.mp3" loop="loop" autoplay="autoplay">Lecture de l"audio non suportée</audio>
 
-  <main class="col-12 row align-items-center">
+  <div id="main" class="col-12 row align-items-center">
     <div class="col-6">
       <h1 id="mainTitle" class="h1">The Stolen Plans</h1>
       <h5 id="mainSubtitle" class="h5">A game made by Enzo Avagliano.</h5>
@@ -30,7 +30,6 @@
           <button class="btn btn-outline-light btn-lg" type="button" name="button"> <a href="#">SETTINGS</a> </button>
           <small>Access the settings of the game (Volume, etc...).</small>
         </div>
-        <button class="btn btn-outline-light btn-lg" type="button" name="button" onclick="mainMenuHUD();"> <a href="#">MAIN MENU</a> </button>
       </div>
 
       <div class="fixed-bottom">
@@ -38,7 +37,35 @@
         <button class="btn btn-outline-light m-1" type="button" onclick="unMuteVolume();" name="button">Play music</button>
       </div>
     </div>
-  </main>
+  </div>
+
+  <div id="newGame" class="col-12 row align-items-center d-none">
+    <div class="col-6">
+      <h1 id="mainTitle" class="h1">The Stolen Plans</h1>
+      <h5 id="mainSubtitle" class="h5">A game made by Enzo Avagliano.</h5>
+    </div>
+    <div class="col-6">
+      <div class="d-flex flex-column justify-content-center align-items-center ml-5 col-6">
+        <div id="buttonContainerOne" class="m-3 d-flex flex-column col-12">
+          <button class="btn btn-outline-light btn-lg" type="button" name="button" onclick="newGameHUD();"> <a href="#">NEW GAME</a> </button>
+          <small>Start a new game, from the begining of the story.</small>
+        </div>
+        <div id="buttonContainerTwo" class="m-3 d-flex flex-column col-12">
+          <button class="btn btn-outline-light btn-lg" type="button" name="button"> <a href="#">CONTINUE</a> </button>
+          <small>Continue an existing game, from an existing save.</small>
+        </div>
+        <div id="buttonContainerThree" class="m-3 d-flex flex-column col-12">
+          <button class="btn btn-outline-light btn-lg" type="button" name="button"> <a href="#">SETTINGS</a> </button>
+          <small>Access the settings of the game (Volume, etc...).</small>
+        </div>
+      </div>
+
+      <div class="fixed-bottom">
+        <button class="btn btn-outline-light m-1" type="button" onclick="muteVolume();" name="button">Pause music</button>
+        <button class="btn btn-outline-light m-1" type="button" onclick="unMuteVolume();" name="button">Play music</button>
+      </div>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

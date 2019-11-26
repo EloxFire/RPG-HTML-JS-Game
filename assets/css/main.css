@@ -10,7 +10,7 @@
   font-family: monospace;
 }
 
-main{
+#main, #newGame{
   height: 100vh;
   width: 100%;
   padding: 0 !important;
