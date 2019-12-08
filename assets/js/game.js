@@ -24,8 +24,6 @@ let nameInput = document.getElementById('playerName');
 let genderInput = document.getElementById('playerGender');
 let mainContainer = document.getElementById('mainContainer');
 
-let playerNameField = document.getElementById('playerNameField');
-let playerHpField = document.getElementById('playerHPField');
 let playerSPField = document.getElementById('playerSPField');
 let playerExpField = document.getElementById('playerExpField');
 let playerSelectedWeaponField = document.getElementById('playerSelectedWeapon');
@@ -71,7 +69,8 @@ class Player{
 
 function setPlayerInfos(){
   playerName = document.getElementById('playerName').value;
-  playerGender = genderInput.value;
+  playerGender = document.getElementById('playerGender').value;
+  player = new Player(playerName, playerGender, defaultHp, defaultSp, defaultExp, "Heros", "none");
 
   console.log("Player's name : " + player.getName());
   console.log("Player's gender : " + player.getGender());
@@ -81,11 +80,15 @@ function setPlayerInfos(){
   console.log(' ');
   console.log("Player infos were set successfully !");
   console.log(' ');
-  window.location.href = 'cinematic.html';
+  // window.location.href = 'cinematic.html';
 }
 
 function initPage(){
-  player = new Player(playerName, playerGender, defaultHp, defaultSp, defaultExp, "Heros", "none");
+
+  let main = document.getElementById('cinematic');
+  let scene = document.getElementById('scene1');
+  main.classList.replace('d-flex', 'd-none');
+  scene.classList.replace('d-none', "d-flex");
 
   console.log("Player's name : " + playerName);
   console.log("Player's gender : " + player.getGender());
@@ -97,8 +100,8 @@ function initPage(){
   console.log(' ');
 
 
-  playerNameField.innerHTML = "Player's name dsd: ";
-  playerHpField.innerHTML = "Player's HP : " + player.getHp();
+  document.getElementById('playerNameField').innerHTML = "Player's name : ";
+  document.getElementById('playerHPField').innerHTML = "Player's HP : " + player.getHp();
   playerSPField.innerHTML = "Player's SP : " + player.getSp();
   playerExpField.innerHTML = "Player's Exp : " + player.getExp();
   playerSelectedWeaponField.innerHTML = "Selected weapon : " + player.getCurrentWeapon();
