@@ -15,6 +15,6 @@ est un jeu de type RPG, dans lequel vous incarnez un jeune développeur partit �
 - Epoque du jeu : **Futur proche - Année 2056**
 - Ambiance du jeu : **Pre-apocaliptyque**
 - Type du jeu : **RPG**
-- Durée de vie du jeu : **30min**
+- Durée de vie du jeu : **5min**
 - Mode de jeu : **Solo**
-- Langue du jeu : **Anglais**
+- Langue du jeu : **Français**
