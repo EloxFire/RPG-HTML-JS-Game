@@ -1,122 +1,312 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/cinematic.css">
-  <link rel="stylesheet" href="assets/css/game.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>The Stolen Plans - RPG GAME</title>
-  <script src="assets/js/main.js" charset="utf-8"></script>
-  <script src="assets/js/game.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <title>RPG - Enzo AVAGLIANO</title>
 </head>
 <body>
-  <audio id="audio" src="assets/sounds/Desire.mp3" loop="loop" autoplay="autoplay">Lecture de l"audio non suportée</audio>
 
-  <div id="main" class="col-12 row align-items-center">
-    <div class="col-6">
-      <h1 id="mainTitle" class="h1">The Stolen Plans</h1>
-      <h5 id="mainSubtitle" class="h5">A game made by Enzo Avagliano.</h5>
-    </div>
-    <div class="col-6">
-      <div class="d-flex flex-column justify-content-center align-items-center ml-5 col-6">
-        <div id="buttonContainerOne" class="m-3 d-flex flex-column col-12">
-          <button class="btn btn-outline-light btn-lg" type="button" name="button" onclick="newGameHUD();"> <a href="#">NEW GAME</a> </button>
-          <small>Start a new game, from the begining of the story.</small>
-        </div>
-        <div id="buttonContainerTwo" class="m-3 d-flex flex-column col-12">
-          <button class="btn btn-outline-light btn-lg" type="button" name="button"> <a href="#">CONTINUE</a> </button>
-          <small>Continue an existing game, from an existing save.</small>
-        </div>
-        <div id="buttonContainerThree" class="m-3 d-flex flex-column col-12">
-          <button class="btn btn-outline-light btn-lg" type="button" name="button"> <a href="#">SETTINGS</a> </button>
-          <small>Access the settings of the game (Volume, etc...).</small>
-        </div>
+  <div id="body-container" class="col-12 d-flex flex-row">
+    <div class="col-6 d-flex align-items-center justify-content-center">
+      <div class="title-container">
+        <h1>The Stolen Plans</h1>
+        <p>A game created by Enzo Avagliano</p>
       </div>
+    </div>
+    <div class="col-6 d-flex align-items-center">
+      <div class="game-creation-container">
+        <h2>Creez votre personnage :</h2>
 
-      <div class="fixed-bottom">
-        <button class="btn btn-outline-light m-1" type="button" onclick="muteVolume();" name="button">Pause music</button>
-        <button class="btn btn-outline-light m-1" type="button" onclick="unMuteVolume();" name="button">Play music</button>
+        <form class="col-7">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Pseudo :</label>
+            <input type="text" class="form-control" id="playerName" placeholder="Votre pseudo">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <button type="button" class="btn btn-outline-light" onclick="intro_01();">Démarrer</button>
+        </form>
       </div>
     </div>
   </div>
 
-  <div id="newGame" class="col-12 row align-items-center d-none">
-    <div class="col-6">
-      <h1 id="mainTitle" class="h1">The Stolen Plans</h1>
-      <h5 id="mainSubtitle" class="h5">A game made by Enzo Avagliano.</h5>
+  <div id="intro-01" class="intro-01 d-none flex-column justify-content-center align-items-center">
+    <h1 id="title-intro-01"></h1>
+    <div class="container">
+      <p id="text-intro-01"></p>
     </div>
-    <div class="col-6">
-      <div class="d-flex flex-column justify-content-center align-items-center ml-5 col-6">
-        <div id="buttonContainerOne" class="m-3 d-flex flex-column col-12">
-          <label for="playerName">Player name :</label>
-          <input id="playerName" class="form-control" type="text" name="playerName" placeholder="Your player name goes here.">
-        </div>
-        <div id="buttonContainerTwo" class="m-3 d-flex flex-column col-12">
-          <label for="playerGender">Player gender :</label>
-          <select id="playerGender" class="form-control" name="playerGender">
-            <option value="Male" selected>Male</option>
-            <option value="Female">Female</option>
-          </select>
-        </div>
-        <div id="buttonContainerThree" class="m-3 d-flex flex-column flex-rows col-12">
-          <button class="btn btn-outline-light btn-lg m-3" type="button" name="buttonMenu" onclick="setPlayerInfos();">VALIDER</button>
-          <button class="btn btn-outline-light btn-lg m-3" type="button" name="buttonMenu" onclick="mainMenuHUD();">MAIN MENU</button>
-          <button class="btn btn-outline-light btn-lg m-3" type="button" name="buttonMenu" onclick="showCinematic();">START GAME</button>
-        </div>
-      </div>
-
-      <div class="fixed-bottom">
-        <button class="btn btn-outline-light m-1" type="button" onclick="muteVolume();" name="button">Pause music</button>
-        <button class="btn btn-outline-light m-1" type="button" onclick="unMuteVolume();" name="button">Play music</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="cinematic" class="d-none col-12 row justify-content-center align-items-center">
-    <div class="d-block text-center">
-      <div class="">
-        <h1 data-aos="fade-in" class="h1">Enzo Avagliano</h1>
-      </div>
-      <div data-aos="fade-in" class="container">
-        <p style="font-size: 1.2em;">Présente...</p>
-      </div>
-    </div>
-
     <div class="clearfix">
-      <button class="btn btn-outline-light btn-lg float-right fixed-bottom m-4" type="button" name="button" onclick="cinematic();">Next</button>
+      <button class="btn btn-outline-light btn-lg float-right fixed-bottom m-4" type="button" name="button" onclick="scene01();">Next</button>
     </div>
   </div>
 
-  <div id="scene1" class="col-12 d-none">
-    <div class="d-flex flex-column">
-      <div id="playerInfosContainer" class="m-4 p-2" style="background-color:rgba(255, 255, 255, 0.20);">
-        <h4 class="h4">Stats :</h4>
-        <p id="playerNameField" class="pl-1">Player's name : </p>
-        <p id="playerHPField" class="pl-1">Player's HP : </p>
-        <p id="playerSPField" class="pl-1">Player's SP : </p>
-        <p id="playerExpField" class="pl-1">Player's Exp : </p>
-        <p><br></p>
-        <p id="playerSelectedWeapon" class="pl-1">Selected Weapon : </p>
-      </div>
+  <div id="scene01" class="scene-01 d-none flex-column">
+    <div id="stats-box-scene01" class="stats-box col-2">
+      <p id="stats-name-scene01">Pseudo :</p>
+      <p id="stats-hp-scene01">HP :</p>
+      <p id="stats-sp-scene01">SP :</p>
+    </div>
 
-      <div id="chapterInfosContainer" class="m-4 p-2" style="background-color:rgba(255, 255, 255, 0.20);">
-        <h4 id="chapter" class="h4">Chapter 1</h4>
-        <p id="location">Location : </p>
-      </div>
-
-      <div class="fixed-bottom d-flex flew-rows justify-content-center">
-        <div style="border: 2px solid #fff;width:80vw;height:15vh;color:#fff;background-color:rgba(255, 255, 255, 0.20);" class="mb-5 p-3">
-          <p id="text">
-            A l'instant où vous arrivez dans le hangar 54, vous êtes rapidement mis au courant des dernières nouveautés de l'enquête.
-            <br>Visiblement, vous allez devoir fouiller les avants postes pirates alentours pour recolter un maximum d'informations et espérer trouver l'endroit ou ont été enmener les disques durs avant qu'ils ne soit détruits et perdus à jamais.
-          </p>
+    <div class="d-flex flex-row">
+      <div class="col-3"></div>
+      <div class="col-6 d-flex flex-row justify-content-center">
+        <div id="choices-container-scene01" class="choices-container">
+          <button id="btn-leger-scene01" class="btn btn-outline-light btn-lg" type="button" onclick="checkClickedButtonLeger();">Equipement Léger</button>
+          <button id='btn-lourd-scene01' class="btn btn-outline-light btn-lg" type="button" onclick="checkClickedButtonLourd();">Equipement Lourd</button>
         </div>
       </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div id="dialog-box-scene01" class="dialog-box fixed-bottom text-center col-12">
+      <p id="dialog-text-scene01"></p>
     </div>
   </div>
 
-  <script src="assets/js/cinematic.js" charset="utf-8"></script>
+  <div id="scene02" class="scene-02 d-none flex-column">
+    <div id="stats-box-scene02" class="stats-box col-2">
+      <p id="stats-name-scene02">Pseudo :</p>
+      <p id="stats-hp-scene02">HP :</p>
+      <p id="stats-sp-scene02">SP :</p>
+    </div>
+
+    <div class="d-flex flex-row">
+      <div class="col-3"></div>
+      <div class="col-6 d-flex flex-row justify-content-center">
+        <div id="choices-container-scene01" class="choices-container">
+          <button id="btn-leger-scene01" class="btn btn-outline-light btn-lg" type="button" onclick="checkClickedButtonLeger();">Equipement Léger</button>
+          <button id='btn-lourd-scene01' class="btn btn-outline-light btn-lg" type="button" onclick="checkClickedButtonLourd();">Equipement Lourd</button>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div id="dialog-box-scene02" class="dialog-box fixed-bottom text-center col-12">
+      <p id="dialog-text-scene02"></p>
+      <div>
+        <button class="btn btn-outline-light btn-lg float-right fixed-bottom m-4" type="button" name="button" onclick="scene03();">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="scene03" class="scene-03 d-none flex-column">
+    <div id="stats-box-scene03" class="stats-box col-2">
+      <p id="stats-name-scene03">Pseudo :</p>
+      <p id="stats-hp-scene03">HP :</p>
+      <p id="stats-sp-scene03">SP :</p>
+    </div>
+
+    <div class="d-flex flex-row">
+      <div class="col-3"></div>
+      <div class="col-6 d-flex flex-row justify-content-center">
+        <div id="choices-container-scene03" class="choices-container">
+          <button id="btn-1-scene03" class="btn btn-outline-light btn-lg" type="button" onclick="attaquerSoldats();">Attaquer les 3 soldats</button>
+          <button id='btn-2-scene03' class="btn btn-outline-light btn-lg" type="button" onclick="contexteAvantScene04();">Passer votre chemin, c'est plus sur</button>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div id="dialog-box-scene03" class="dialog-box fixed-bottom text-center col-12">
+      <p id="dialog-text-scene03"></p>
+      <div>
+        <button class="btn btn-outline-light btn-lg float-right fixed-bottom m-4" type="button" name="button" onclick="scene04();">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="scene04" class="scene-04 d-none flex-column">
+    <div id="stats-box-scene04" class="stats-box col-2">
+      <p id="stats-name-scene04">Pseudo :</p>
+      <p id="stats-hp-scene04">HP :</p>
+      <p id="stats-sp-scene04">SP :</p>
+    </div>
+
+    <div class="d-flex flex-row">
+      <div class="col-3"></div>
+      <div class="col-6 d-flex flex-row justify-content-center">
+        <div id="choices-container-scene04" class="choices-container">
+          <button id="btn-1-scene04" class="btn btn-outline-light btn-lg" type="button" onclick="fouillerLotissementScene04();">Oui, on pourrait trouver un truc utile</button>
+          <button id='btn-2-scene04' class="btn btn-outline-light btn-lg" type="button" onclick="contexteAvantScene05();">Non, on pert notre temps</button>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div id="dialog-box-scene04" class="dialog-box fixed-bottom text-center col-12">
+      <p id="dialog-text-scene04"></p>
+      <div>
+        <button class="btn btn-outline-light btn-lg float-right fixed-bottom m-4" type="button" name="button" onclick="scene05();">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="scene05" class="scene-05 d-none flex-column">
+    <div id="stats-box-scene05" class="stats-box col-2">
+      <p id="stats-name-scene05">Pseudo :</p>
+      <p id="stats-hp-scene05">HP :</p>
+      <p id="stats-sp-scene05">SP :</p>
+    </div>
+
+    <div class="d-flex flex-row">
+      <div class="col-3"></div>
+      <div class="col-6 d-flex flex-row justify-content-center">
+        <div id="choices-container-scene05" class="choices-container">
+          <button id="btn-1-scene05" class="btn btn-outline-light btn-lg" type="button" onclick="attaqueScene05();">Les attaquer tout de même !</button>
+          <button id='btn-2-scene05' class="btn btn-outline-light btn-lg" type="button" onclick="negociationScene05();">Essayer de négocier votre passage en prétendnant faire partie de la secte.</button>
+          <button id='btn-2-scene05' class="btn btn-outline-light btn-lg" type="button" onclick="scene05Suicide();">Abandonner la mission et vous suicider</button>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div id="dialog-box-scene05" class="dialog-box fixed-bottom text-center col-12">
+      <p id="dialog-text-scene05"></p>
+      <div>
+        <button id="next-button-scene05" class="btn btn-outline-light btn-lg float-right fixed-bottom m-4" type="button" name="button" onclick="scene06();">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="scene06" class="scene-06 d-none flex-column">
+    <div id="stats-box-scene06" class="stats-box col-2">
+      <p id="stats-name-scene06">Pseudo :</p>
+      <p id="stats-hp-scene06">HP :</p>
+      <p id="stats-sp-scene06">SP :</p>
+    </div>
+
+    <div class="d-flex flex-row">
+      <div class="col-3"></div>
+      <div class="col-6 d-flex flex-row justify-content-center">
+        <div id="choices-container-scene06" class="choices-container">
+          <button id="btn-1-scene06" class="btn btn-outline-light btn-lg" type="button" onclick="healScene06();">Vous soigner, et faire une sieste</button>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div id="dialog-box-scene06" class="dialog-box fixed-bottom text-center col-12">
+      <p id="dialog-text-scene06"></p>
+      <div>
+        <button id="next-button-scene06" class="btn btn-outline-light btn-lg float-right fixed-bottom m-4" type="button" name="button" onclick="scene07();">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="scene07" class="scene-07 d-none flex-column">
+    <div id="stats-box-scene07" class="stats-box col-2">
+      <p id="stats-name-scene07">Pseudo :</p>
+      <p id="stats-hp-scene07">HP :</p>
+      <p id="stats-sp-scene07">SP :</p>
+    </div>
+
+    <div class="d-flex flex-row">
+      <div class="col-3"></div>
+      <div class="col-6 d-flex flex-row justify-content-center">
+        <div id="choices-container-scene06" class="choices-container">
+          <button id="btn-1-scene07" class="btn btn-outline-light btn-lg" type="button" onclick="disguiseScene07();">Se déguiser en membre de la secte</button>
+          <button id="btn-1-scene07" class="btn btn-outline-light btn-lg" type="button" onclick="contecteAvantScene08();">Ne pas se déguiser en sectaire</button>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div id="dialog-box-scene07" class="dialog-box fixed-bottom text-center col-12">
+      <p id="dialog-text-scene07"></p>
+      <div>
+        <button id="next-button-scene07" class="btn btn-outline-light btn-lg float-right fixed-bottom m-4" type="button" name="button" onclick="scene08();">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="scene08" class="scene-08 d-none flex-column">
+    <div id="stats-box-scene08" class="stats-box col-2">
+      <p id="stats-name-scene08">Pseudo :</p>
+      <p id="stats-hp-scene08">HP :</p>
+      <p id="stats-sp-scene08">SP :</p>
+    </div>
+
+    <div class="d-flex flex-row">
+      <div class="col-3"></div>
+      <div class="col-6 d-flex flex-row justify-content-center">
+        <div id="choices-container-scene08" class="choices-container">
+          <button id="btn-1-scene08" class="btn btn-outline-light btn-lg" type="button" onclick="openSacScene08();">Ouvrir le sac et fouiller</button>
+          <button id="btn-1-scene08" class="btn btn-outline-light btn-lg" type="button" onclick="contexteAvantScene09();">Ne pas ouvrir le sac</button>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div id="dialog-box-scene08" class="dialog-box fixed-bottom text-center col-12">
+      <p id="dialog-text-scene08"></p>
+      <div>
+        <button id="next-button-scene08" class="btn btn-outline-light btn-lg float-right fixed-bottom m-4" type="button" name="button" onclick="scene09();">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="scene09" class="scene-09 d-none flex-column">
+    <div id="stats-box-scene09" class="stats-box col-2">
+      <p id="stats-name-scene09">Pseudo :</p>
+      <p id="stats-hp-scene09">HP :</p>
+      <p id="stats-sp-scene09">SP :</p>
+    </div>
+
+    <div class="d-flex flex-row">
+      <div class="col-3"></div>
+      <div class="col-6 d-flex flex-row justify-content-center">
+        <div id="choices-container-scene09" class="choices-container">
+          <button id="btn-1-scene09" class="btn btn-outline-light btn-lg" type="button" onclick="throwBagScene09();">Jetter le sac le plus loin possible</button>
+          <button id="btn-1-scene09" class="btn btn-outline-light btn-lg" type="button" onclick="notThrowBagScene09();">Tenter de désamorser la bombe, vous avez le temps !</button>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div id="dialog-box-scene09" class="dialog-box fixed-bottom text-center col-12">
+      <p id="dialog-text-scene09"></p>
+      <div>
+        <button id="next-button-scene09" class="btn btn-outline-light btn-lg float-right fixed-bottom m-4" type="button" name="button" onclick="scene10();">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="scene10" class="scene-10 d-none flex-column">
+    <div id="stats-box-scene10" class="stats-box col-2">
+      <p id="stats-name-scene10">Pseudo :</p>
+      <p id="stats-hp-scene10">HP :</p>
+      <p id="stats-sp-scene10">SP :</p>
+    </div>
+
+    <div class="d-flex flex-row">
+      <div class="col-3"></div>
+      <div class="col-6 d-flex flex-row justify-content-center">
+        <div id="choices-container-scene10" class="choices-container">
+          <button id="btn-1-scene10" class="btn btn-outline-light btn-lg" type="button" onclick="end()">Continuer</button>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+
+    <div id="dialog-box-scene10" class="dialog-box fixed-bottom text-center col-12">
+      <p id="dialog-text-scene10"></p>
+    </div>
+  </div>
+
+  <div id="outro" class="outro d-none flex-column justify-content-center align-items-center">
+    <h1 id="title-outro"></h1>
+    <div class="container">
+      <p id="text-outro"></p>
+    </div>
+    <div class="clearfix">
+      <button class="btn btn-outline-light btn-lg float-right fixed-bottom m-4" type="button" name="button" onclick="document.location.reload(true);">Retour au menu</button>
+    </div>
+  </div>
+
+
+  <script src="assets/js/main.js" charset="utf-8"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

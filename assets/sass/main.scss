@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Computer';
+  src: url('../fonts/Computerfont.ttf');
+}
+
+$white: #FFFFFF;
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+p, h1, h2, label{
+  color: $white;
+}
+
+h1, h2, h3, h4{
+  font-family: Computer;
+}
+
+h1{
+  font-size: 5em;
+}
+
+h2{
+  font-size: 2.5em;
+}
+
+
+#body-container{
+  min-height: 100vh;
+  background-image: url('../img/background.jpg');
+  background-position: center;
+  background-size: cover;
+
+  .title-container{
+    h1{
+      @extend h1;
+    }
+  }
+}
+
+.stats-box, .dialog-box{
+  border: 1px solid $white;
+  padding: 10px;
+  margin: 20px;
+}
+
+#intro-01, #scene01, #scene02, #scene03, #scene04, #scene05, #scene06, #scene07, #scene08, #scene09, #scene10, #outro{
+  min-height: 100vh;
+  background-image: url('../img/starfield.png');
+  background-position: center;
+  background-size: cover;
+}
