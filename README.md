@@ -2,6 +2,7 @@
 
 ###### Projet mené par [Enzo AVAGLIANO](https://github.com/EloxFire)
 ###### Lien GitHub : https://github.com/EloxFire/RPG-HTML-JS-Game
+###### Vous pouvez jouer ici : https://eloxfire.github.io/RPG-HTML-JS-Game/
 
 ___
 
